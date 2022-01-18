@@ -10,10 +10,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Signika+Negative:wght@300;400;700&family=Sora:wght@400;700;800&display=swap');
 
+        *{ 
+            border-radius: 10px;
+        }
+
+        body {
+            background-image: url("images/cosmos.jpg");
+            backdrop-filter: blur(10px);
+            margin: 0;
+            padding: 0;
+        }
+
         .page-header {
+            margin-top: 0;
+            padding-top: 30px;
             font-family: 'Pacifico', cursive;
             font-size: 50px;
             text-align: center;
+            color: #a61e4d;
         }
 
         a:link {
@@ -22,15 +36,15 @@
           
         a:visited {
             text-decoration: none;
-            color: black;
+            color: #a61e4d;
         }
 
         #main {
             display: flex;
             flex-direction: column;
             max-width: 700px;
+            min-width: 400px;
             margin: auto;
-            overflow: auto;
             font-family: 'Signika Negative', sans-serif;
             font-weight: 300;
         }
@@ -38,11 +52,15 @@
         .post {
             display: flex;
             flex-direction: column;
-            border: 1px solid #dfdfdf;
+            margin: 1em;
+            background-color: #f1f3f5;
         }
 
         img {
             object-fit: contain;
+            border-radius: 0.5em;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
 
         img:hover {
@@ -52,7 +70,43 @@
         .post-header {
             display: flex;
             justify-content: space-between;
+        }
 
+        p {
+            margin-top: 0;
+        }
+
+        .details {
+            padding: 1em 2em;
+        }
+
+        .description {
+            margin-bottom: auto;
+        }
+
+        h3 {
+            margin-top: auto;
+        }
+
+        button {
+            border-radius: 5px;
+        }
+
+        .not-liked, .liked {
+            margin: 0px auto 15px auto;
+            background-color: pink;
+            transition: all .6s ease;
+            width: 80px;
+            height: 40px;
+            font: inherit;
+            border: none;
+            cursor: pointer;
+        }
+
+        .not-liked:hover, .liked {
+            background-color: hotpink;
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>

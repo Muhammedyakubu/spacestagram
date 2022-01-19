@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Signika+Negative:wght@300;400;700&family=Sora:wght@400;700;800&display=swap");
+
+			* {
+				border-radius: 10px;
+			}
+
+			body {
+				background-image: url("../images/OrionCross_LucyH_7441.jpg");
+				backdrop-filter: blur(10px);
+				margin: 0;
+				padding: 0;
+			}
+
+			.page-header {
+				margin-top: 0;
+				padding-top: 30px;
+				font-family: "Pacifico", cursive;
+				font-size: 50px;
+				text-align: center;
+				color: #a61e4d;
+			}
+
+			.page-header:hover {
+				cursor: pointer;
+			}
+
+			#main {
+				display: flex;
+				flex-direction: column;
+				max-width: 700px;
+				min-width: 400px;
+				margin: auto;
+				font-family: "Signika Negative", sans-serif;
+				font-weight: 300;
+			}
+
+			.post {
+				display: flex;
+				flex-direction: column;
+				margin: 1em;
+				background-color: #f1f3f5;
+				border: 2px solid lightgray;
+			}
+
+			img {
+				object-fit: contain;
+				border-radius: 0.5em;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+
+			img:hover {
+				cursor: pointer;
+			}
+
+			.post-header {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			p {
+				margin-top: 0;
+			}
+
+			.details {
+				padding: 1em 2em;
+			}
+
+			.description {
+				margin-bottom: auto;
+			}
+
+			h3 {
+				margin-top: auto;
+			}
+
+			button {
+				border-radius: 5px;
+			}
+
+			.not-liked,
+			.liked {
+				margin: 0px auto 15px auto;
+				background-color: pink;
+				transition: all 0.5s ease;
+				width: 80px;
+				height: 40px;
+				font: inherit;
+				border: none;
+				cursor: pointer;
+			}
+
+			.liked {
+				background-color: #c92a2a;
+				color: white;
+			}
+
+            .not-liked:hover,
+            .liked:hover {
+                filter: brightness(87%);
+            }
+
+			@keyframes change-shape {
+                from {
+                    transform: scale(0.1) rotate(45deg);
+                }
+				15% {
+                    transform: scale(1.2) rotate(45deg);
+				}
+				25% {
+                    transform: scale(0.8) rotate(45deg);
+				}
+				35% {
+                    transform: scale(1) rotate(45deg);
+				}
+				45% {
+                    transform: scale(0.8) rotate(45deg);
+				}
+				55% {
+                    transform: scale(0.8) rotate(45deg);
+				}
+                65% {
+                    transform: scale(1) rotate(45deg);
+				}
+                75% {
+                    transform: scale(0.8) rotate(45deg);
+				}
+                85% {
+                    transform: scale(1.2) rotate(45deg);
+				}
+                to {
+                    transform: scale(0.1) rotate(45deg);
+                }
+			}
+
+			.heart-shape {
+                animation: change-shape 2s ease-out;
+				position: absolute;
+                width: 40px;
+				height: 40px;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				transform: rotate(45deg);
+                background-color: #c92a2a;
+
+			}
+
+			.heart-shape:before,
+			.heart-shape:after {
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				content: "";
+				-webkit-border-radius: 50%;
+				-moz-border-radius: 50%;
+				-o-border-radius: 50%;
+				border-radius: 50%;
+                background-color: #c92a2a;
+
+			}
+
+			.heart-shape:before {
+				bottom: 0px;
+				left: -20px;
+			}
+
+			.heart-shape:after {
+				top: -20px;
+				right: 0px;
+			}

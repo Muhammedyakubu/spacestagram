@@ -26,9 +26,14 @@ function renderImage(image) {
 }
 
 function toggleLikeState(e) {
+    const heart = document.createElement("div");
     const likeBtn = e.target;
-    if (likeBtn.classList == "not-liked"){
+    heart.classList.add("heart-shape");
+
+    if (likeBtn.classList.contains("not-liked")){
         likeBtn.classList = "liked" 
+        likeBtn.parentElement.appendChild(heart)
+        setTimeout(() => heart.remove(), 1950)
         images[likeBtn.dataset.postid].likeState = "liked"
     } else {
         likeBtn.classList = "not-liked"
@@ -37,14 +42,11 @@ function toggleLikeState(e) {
 
     // save changes
     sessionStorage.setItem("NASA_images", JSON.stringify(images))
-
-    //animation for the heart
 }
 
 async function getImage() {
     const res = await fetch(api_endpoint)
-    const image = res.json();
-    return image;
+    return res.json();
 } 
 
 function loadImages(images) {
@@ -57,7 +59,7 @@ function loadImages(images) {
 
 
 
-
+//===============MAIN===============//
 let images = sessionStorage.getItem("NASA_images")
 if(images && images != "null") {
     images = JSON.parse(sessionStorage.getItem("NASA_images"))
@@ -71,5 +73,6 @@ getImage().then(image => {
         image["likeState"] = "not-liked";
         images.push(image);
     }
-    loadImages(images)    
+    loadImages(images)
+    sessionStorage.setItem("NASA_images", JSON.stringify(images))
 });
